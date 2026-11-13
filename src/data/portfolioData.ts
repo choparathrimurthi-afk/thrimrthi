@@ -1,3 +1,8 @@
+import portraitImage from '../assets/images/thrimurthi_portrait_white_1794562602707.jpg';
+import smartSosImage from '../assets/images/project_smart_sos_1794561456221.jpg';
+import foodWasteImage from '../assets/images/project_food_waste_1794561456570.jpg';
+import portfolio3dImage from '../assets/images/project_portfolio_3d_1794561456860.jpg';
+
 export interface SkillItem {
   id: string;
   name: string;
@@ -42,7 +47,7 @@ export interface AchievementSlot {
 export const PORTFOLIO_OWNER = {
   fullName: 'Ch. Thrimurthi',
   shortName: 'Ch. Thrimurthi',
-  avatarUrl: '/src/assets/images/thrimurthi_portrait_white_1794562602707.jpg',
+  avatarUrl: portraitImage,
   greeting: 'HELLO, WORLD! 👋',
   headline: "Hi, I'm Ch. Thrimurthi.",
   role: 'Aspiring AI & Machine Learning Engineer',
@@ -127,7 +132,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       'Combines a single-tap emergency trigger interface with geolocation coordinate capture, structured alert payloads, and resilient fallback contact routing.',
     techStack: ['Python', 'JavaScript', 'HTML', 'CSS', 'Geolocation API'],
     githubUrl: 'https://github.com/thrimurthi/smart-sos-emergency-alert',
-    imageUrl: '/src/assets/images/project_smart_sos_1794561456221.jpg',
+    imageUrl: smartSosImage,
     accent: 'blue',
   },
   {
@@ -140,7 +145,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       'Features donor listing workflows, freshness priority sorting, and clean pickup coordination dashboards structured for high-clarity mobile and desktop access.',
     techStack: ['HTML', 'CSS', 'JavaScript', 'Python', 'Git & GitHub'],
     githubUrl: 'https://github.com/thrimurthi/food-waste-management-system',
-    imageUrl: '/src/assets/images/project_food_waste_1794561456570.jpg',
+    imageUrl: foodWasteImage,
     accent: 'purple',
   },
   {
@@ -153,7 +158,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       'Built with React, React Three Fiber, Drei, Tailwind CSS, and Framer Motion, featuring software-WebGL scaling and procedural studio environment reflections.',
     techStack: ['React', 'Three.js', 'React Three Fiber', 'Drei', 'Tailwind CSS', 'Motion'],
     githubUrl: 'https://github.com/thrimurthi/ai-ml-3d-portfolio',
-    imageUrl: '/src/assets/images/project_portfolio_3d_1794561456860.jpg',
+    imageUrl: portfolio3dImage,
     accent: 'violet',
   },
 ];

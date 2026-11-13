@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'motion/react';
 import { PORTFOLIO_OWNER } from '../data/portfolioData';
-import { AboutGeoScene } from './three/AboutGeoScene';
+
+const AboutGeoScene = lazy(() =>
+  import('./three/AboutGeoScene').then((mod) => ({ default: mod.AboutGeoScene })),
+);
 
 export function AboutSection() {
   return (
@@ -25,7 +28,15 @@ export function AboutSection() {
         <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12 lg:gap-10">
           {/* 3D Animated Geometric Object */}
           <div className="lg:col-span-5">
-            <AboutGeoScene />
+            <Suspense
+              fallback={
+                <div className="flex w-full h-[320px] sm:h-[380px] lg:h-full lg:min-h-[380px] items-center justify-center rounded-2xl border border-purple-500/20 bg-[#0b0b18]">
+                  <p className="font-mono text-xs text-slate-400">Loading 3D Sculpture…</p>
+                </div>
+              }
+            >
+              <AboutGeoScene />
+            </Suspense>
           </div>
 
           {/* Editorial Bio & Structured Details */}

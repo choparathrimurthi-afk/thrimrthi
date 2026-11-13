@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowDownRight, Download } from 'lucide-react';
 import { PORTFOLIO_OWNER } from '../data/portfolioData';
-import { HeroNeuralScene } from './three/HeroNeuralScene';
+
+const HeroNeuralScene = lazy(() =>
+  import('./three/HeroNeuralScene').then((mod) => ({ default: mod.HeroNeuralScene })),
+);
 
 interface HeroSectionProps {
   onDownloadResume: () => void;
@@ -116,7 +119,15 @@ export function HeroSection({ onDownloadResume }: HeroSectionProps) {
             transition={{ duration: 0.65, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5"
           >
-            <HeroNeuralScene />
+            <Suspense
+              fallback={
+                <div className="flex w-full h-[360px] sm:h-[440px] lg:h-[580px] items-center justify-center rounded-2xl border border-purple-500/20 bg-[#080812]">
+                  <p className="font-mono text-xs text-slate-400">Loading 3D Neural Core…</p>
+                </div>
+              }
+            >
+              <HeroNeuralScene />
+            </Suspense>
           </motion.div>
         </div>
 
